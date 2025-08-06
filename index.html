@@ -1,0 +1,46 @@
+<!DOCTYPE html>
+<html>
+<head>
+  <meta charset="UTF-8">
+  <title>Flight Tracker Search</title>
+  <style>
+    body {
+      font-family: Arial, sans-serif;
+      text-align: center;
+      margin: 50px;
+    }
+    input {
+      padding: 8px;
+      width: 200px;
+      border: 1px solid #ccc;
+      border-radius: 4px;
+    }
+    button {
+      padding: 8px 16px;
+      background: #0078d7;
+      color: white;
+      border: none;
+      border-radius: 4px;
+      margin-left: 6px;
+      cursor: pointer;
+    }
+  </style>
+</head>
+<body>
+  <h3>Track Flight by Tail Number</h3>
+  <p>Enter a tail number (e.g., N12345) and click "Track Flight":</p>
+  <input id="tailInput" type="text" placeholder="Enter Tail Number">
+  <button onclick="openFlight()">Track Flight</button>
+
+  <script>
+    function openFlight() {
+      var tail = document.getElementById("tailInput").value.trim();
+      if (tail) {
+        window.open("https://flightaware.com/live/flight/" + tail, "_blank");
+      } else {
+        alert("Please enter a valid tail number.");
+      }
+    }
+  </script>
+</body>
+</html>
